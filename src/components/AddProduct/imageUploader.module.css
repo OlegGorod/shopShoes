@@ -1,0 +1,50 @@
+.box {
+  --b: 1px;
+  --s: 20px;
+  --c1: #ffffff;
+  --c2: #5c5c5c;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 320px;
+  height: 380px;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: var(--b);
+  background: repeating-conic-gradient(var(--c1) 0 25%, var(--c2) 0 50%) 0 0 /
+    var(--s) var(--s) round;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  width: 320px;
+  height: 380px;
+}
+
+.box input {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.deleteIcon {
+  visibility: hidden;
+}
+
+.shieldBox:hover .deleteIcon {
+  visibility: visible;
+}
+
+.shieldBox:hover .imageBox {
+  filter: brightness(0.5);
+}

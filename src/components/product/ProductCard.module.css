@@ -1,0 +1,14 @@
+.cardContainer {
+  position: relative;
+}
+
+.addToChartButton {
+  display: none !important;
+  position: absolute !important;
+  border-radius: 100px !important;
+  z-index: 100;
+}
+
+.cardContainer:hover .addToChartButton {
+  display: block !important;
+}

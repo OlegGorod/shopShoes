@@ -1,0 +1,8 @@
+.imageSelect {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.imageSelect::-webkit-scrollbar {
+  display: none;
+}
